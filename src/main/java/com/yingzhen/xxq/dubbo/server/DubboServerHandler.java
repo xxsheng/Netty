@@ -36,11 +36,17 @@ public class DubboServerHandler extends ChannelInboundHandlerAdapter{
 		
 		// 5. 获取参数值
 		// 调用方法 获取返回值
-		
+		if(method.getReturnType().getName() ==void.class.getName()) {
+			System.out.println("---------------");
+		}
 		Object res = method.invoke(target, req.getArgs());
 		
-		//返回给调用者
-		ctx.write(res);
+		if(res != null){
+			//返回给调用者
+			ctx.write(res);
+		}else {
+			return;
+		}
 	}
 
 	@Override

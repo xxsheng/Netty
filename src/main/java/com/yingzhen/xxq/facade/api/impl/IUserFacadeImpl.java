@@ -21,4 +21,10 @@ public class IUserFacadeImpl implements IUserFacade {
 		return "dubbo is" + id;
 	}
 
+	@Override
+	public void getPassword(String password) {
+		// TODO Auto-generated method stub
+		System.out.println(password);
+	}
+
 }

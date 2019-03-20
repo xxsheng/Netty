@@ -17,4 +17,6 @@ public interface IUserFacade {
 	 */
 	public String getUserName(Long id);
 	
+	public void getPassword(String password);
+	
 }

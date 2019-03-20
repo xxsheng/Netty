@@ -18,11 +18,13 @@ public class DubboClient {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		IUserFacade userFacade = (IUserFacade) DubboProxy.getProxyInstance(IUserFacade.class);
+		IUserFacade userFacade =  DubboProxy.getProxyInstance(IUserFacade.class);
 		
-		System.out.println(userFacade.getUserName(520L));
-		System.out.println(userFacade.getUserName(1314L));
-		System.out.println(userFacade.getUserName(1314520L));
+//		System.out.println(userFacade.getUserName(520L));
+//		System.out.println(userFacade.getUserName(1314L));
+//		System.out.println(userFacade.getUserName(1314520L));
+		
+		userFacade.getPassword("12345");
 	}
 
 }

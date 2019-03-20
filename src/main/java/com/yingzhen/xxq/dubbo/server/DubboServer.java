@@ -49,7 +49,7 @@ public class DubboServer {
 			.option(ChannelOption.SO_BACKLOG, 128)
 			.childOption(ChannelOption.SO_KEEPALIVE, true);
 			
-			//Bind and start to accept incomint connections
+			//Bind and start to accept incomint connectionss
 			ChannelFuture f = bootstrap.bind(port).sync();
 			
 			f.channel().closeFuture().sync();

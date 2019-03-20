@@ -12,8 +12,8 @@ import java.lang.reflect.Proxy;
  */
 public class DubboProxy {
 
-	public static Object getProxyInstance(Class<?> clazz) {
+	public static <T> T getProxyInstance(Class<T> clazz) {
 		
-		return Proxy.newProxyInstance(clazz.getClassLoader(), new Class[] {clazz}, new DubboConsumeHandler());
+		return clazz.cast(Proxy.newProxyInstance(clazz.getClassLoader(), new Class[] {clazz}, new DubboConsumeHandler()));
 	}
 }
